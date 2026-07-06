@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: "Fraunces", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Space Grotesk", monospace;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-label {
+  font-family: var(--font-label);
+}
+
+::selection {
+  background-color: #bd8770;
+  color: #f7f2eb;
+}
+
+/* thin hairline divider used between sections */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(169, 131, 79, 0.45) 20%,
+    rgba(169, 131, 79, 0.45) 80%,
+    transparent
+  );
+}
+
+/* custom scrollbar, subtle */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f2eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8c9b8;
+  border-radius: 999px;
+}
+
+/* visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #bd8770;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
